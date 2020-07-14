@@ -33,6 +33,9 @@
     // Transformar um texto/string em um número/int
     var userAge = Int32.Parse(result); 
 
+    // Transformar um texto/string em um número com ponto flutuante/double
+    double price = Double.Parse(result);
+
 
 ### Operadores de comparação 
 #### (toda comparação retorna um booleano/bool)
@@ -93,6 +96,12 @@
     3 % 2;
     // vai retornar 1
 
+    // Incrementando uma variável 
+    var counter = 0;
+    var counter++;
+    ver counter += 1;
+    // caunter terá o valor 2
+
 ### Blocos condicionais 
     // escrevendo olá SOMENTE quando 1 > 0
     if (1 > 0)
@@ -112,6 +121,14 @@
     {
      Console.Writeline("Xau!");
     }
+
+### Laços de repetição
+    // while
+    while (true)
+    {
+        Console.WriteLine("Olá!");
+    }
+    // Dirá olá repetidamente
 
 ### Comandos do editor
     Selecionando o texto:  

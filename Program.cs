@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 namespace primeira_aula
 {
@@ -6,28 +6,32 @@ namespace primeira_aula
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Qual é a sua idade?");
-            var result = Console.ReadLine();
 
-            //transformando o texto que o usuario digitou para um tipo numerico
-            var userAge = Int32.Parse(result);
-           
-            //comparando SE a idade do usuário é maior que 15 E menor que 51
-            if(userAge > 15 && userAge < 51 ) 
-            {
-                Console.WriteLine("Sim! você tem idade para o Entra21");
-            }
-            // else if (userAge == 14 || userAge == 15)
+            // var names = new string[3];
+            // var counter = 0;
+
+            // while (counter < 3)
             // {
-            //     Console.WriteLine("Você não tem idade para o Entra21 mas tem para o MenorAprendiz");
+            //     System.Console.WriteLine("Digite um nome");
+            //     var result = Console.ReadLine();
+
+            //     names[counter] = result;
+            //     counter++;
             // }
-            else
+            // System.Console.WriteLine($"Olá, {names[0]}!");
+            // System.Console.WriteLine($"Olá, {names[1]}!");
+            // System.Console.WriteLine($"Olá, {names[2]}!");
+            
+            var contador = 1;
+
+            while(contador <= 10)
             {
-                Console.WriteLine("Não! você não tem idade para o Entra21 nem para o MenorAprendiz");
+                System.Console.WriteLine(contador);
+                contador = contador + 1;
+                
             }
 
-            Console.WriteLine("Só isso, mais nada!");
-        
+           
         }
     }
 }
