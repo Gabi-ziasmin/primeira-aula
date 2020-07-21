@@ -130,6 +130,12 @@
     }
     // Dirá olá repetidamente
 
+    // do - while
+    do {
+
+    } while(condição)
+
+
 ### Comandos do editor
     Selecionando o texto:  
     segurar a tecla shift e utilizar as setas 
