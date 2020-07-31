@@ -47,37 +47,35 @@ namespace primeira_aula
             // número qualquer e pesquise no array se o número existe. Caso, seja verdade imprima a
             // mensagem: “O número existe no array” , caso contrário “Número inexistente”.
             
-            int[] num = new int[3];
-            var cont = 0;
+            int[] num = new int[10];
             int num2;
-            string continuar = "s";
+            int i = 0;
+            int n = 0;
 
-            while(cont < 3)
-            {
-                System.Console.WriteLine("Informe um número: ");
+           for (i = 0; i <= 9; i++)
+           {
+               System.Console.WriteLine("Informe um número: ");
                 var result = int.Parse(Console.ReadLine());
 
-                num[cont] = result;
-                cont++;
-            }
+                num[i] = result;
+           }
+           System.Console.WriteLine("Informe o número que deseja procurar no vetor: ");
+           num2 = Int32.Parse(Console.ReadLine());
 
-            while(continuar != "n")
-            {
-                System.Console.WriteLine("Informe o número que deseja procurar: ");
-                num2 = Int32.Parse(Console.ReadLine()); 
-
-                if(num2 == num[3])
+                for (i = 0; i <= 9; i++)
                 {
-                    System.Console.WriteLine("O número existe no array! ");
-                }
-                else
+                    if(num2==num[i])
+                    {
+                        System.Console.WriteLine("O número existe no array! ");
+                        n++;
+                        break;
+                    }
+                }  
+                if(n == 0)
                 {
-                    System.Console.WriteLine("Número inexistente!");
-                }
-                System.Console.WriteLine("Deseja continuar? (s/n)");
-                continuar = Console.ReadLine();
-            }
-            
+                    System.Console.WriteLine("Número inexistente");
+                }  
+                      
 
         }
     }
