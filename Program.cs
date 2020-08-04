@@ -4,8 +4,7 @@ namespace primeira_aula
 {
     class Program
     {
-        static void Main(string[] args)
-        {
+       
 
             // var names = new string[3];
             // var counter = 0;
@@ -148,7 +147,108 @@ namespace primeira_aula
             //     }
 
             // Terminar exercícios 5 e 6 da lista 2
-    
+            // Leia um array A com 15 elementos, e calcule a média aritmética dos mesmos, em
+            // seguida, diga quantos dos elementos lidos estão abaixo, acima e na média.
+            
+         static void Exercise5()
+         {
+            var A = new int[15];
+            var a = 0;
+            var b = 0;
+            var c = 0;
+            var media = 0;
+            var soma = 0;
+
+            for (int i = 0; i < 15; i++)
+            {
+                System.Console.WriteLine("Informe um número: ");
+                var result = Int32.Parse(Console.ReadLine());
+
+                soma = result + soma;                
+
+                A[i] = result;
+              
+                if(i == 14)
+                {
+                    media = soma / 15;
+                }
+                
+
+            }
+            
+            for (int i = 0; i < 15; i++)
+            {
+                
+                if(A[i] < media)
+                {
+                    a++;
+                }
+                else if(A[i] > media)
+                {
+                    b++;
+                }
+                else if(A[i] == media)
+                {
+                    c++;
+                }
+
+            }
+                System.Console.WriteLine(media);
+                 if(a > 0)
+                {
+                    System.Console.WriteLine($"{a} números do Array estão abaixo da média ");
+                }
+                 if(b > 0)
+                {
+                    System.Console.WriteLine($"{b} números do Array estão acima da média ");
+                }
+                if(c > 0)
+                {
+                    System.Console.WriteLine($"{c} números do Array estão na média de ");
+                }
+        }
+        
+        static void Exercise4L1()
+        {
+            // Ler três valorese colocálos em ordem.
+            var smaller = Double.MaxValue;
+            var middle = 0.0;
+            var greater = 0.0;
+
+            for (int i = 0; i < 3; i++)
+            {
+                System.Console.WriteLine("Informe um número: ");
+                var input = Double.Parse(Console.ReadLine());
+
+                if(input < smaller)
+                {
+                    if(i ==0)
+                    {
+                        smaller = input;
+                    }
+                    greater = middle;
+                    middle = smaller;
+                    smaller = input;  
+                }
+                    else if(input >middle)
+                    {
+                        middle = greater;
+                        greater = input;
+                    }
+                    else
+                    {
+                        middle = input;
+                    }
+            }
+            System.Console.WriteLine($"\nO primeiro número é: {smaller}");
+            System.Console.WriteLine($"O segundo número é: {middle}");
+            System.Console.WriteLine($"O terceiro número é: {greater}");
+        }
+            
+
+         static void Main(string[] args)
+        {
+            Exercise5();
         }
     } 
 }
