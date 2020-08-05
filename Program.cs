@@ -6,151 +6,30 @@ namespace primeira_aula
     {
        
 
-            // var names = new string[3];
-            // var counter = 0;
+         static void Exercise2L2()
+         {
+            var num = new int[10];
 
-            // while (counter < 3)
-            // {
-            //     System.Console.WriteLine("Digite um nome");
-            //     var result = Console.ReadLine();
+            for (int i = 0; i < 10; i++)
+            {
+                System.Console.WriteLine("Informe um número: ");
+                num[i] = Int32.Parse(Console.ReadLine());
+            }
 
-            //     names[counter] = result;
-            //     counter++;
-            // }
-            // System.Console.WriteLine($"Olá, {names[0]}!");
-            // System.Console.WriteLine($"Olá, {names[1]}!");
-            // System.Console.WriteLine($"Olá, {names[2]}!");
+            System.Console.WriteLine("Ordem crescente: ");
+            for(int i = 0; i < 10; i++)
+            {
+                System.Console.WriteLine(num[i]);
+            }
 
-            // !!!!!!14)Ler três valores e colocá-los em ordem!!!!!! SÓ FALTA ESSA
-            // int cont = 0;
-            // int cont2 = 0;
-            // int[] num = new int[3];
-
-            // for (cont = 0; cont < 3; cont++)
-            // {
-            //     Console.Write("Digite um número: ");
-            //     num[cont] = int.Parse(Console.ReadLine());
-            // }            
-
-            // Array.Sort(num);
-
-            // for (cont = 2; cont >= 0; cont--) 
-            // {
-            //     Console.Write("\n");                
-            //     Console.Write(num[cont2]);
-            //     cont2++;
-            // }  
-
-           
-            // Leia 10 elementos e armazene em um array A. Em seguida, solicite pelo teclado um
-            // número qualquer e pesquise no array se o número existe. Caso, seja verdade imprima a
-            // mensagem: “O número existe no array” , caso contrário “Número inexistente”.
+            System.Console.WriteLine("Ordem decrescente: ");
+            for (int i = 9; i > -1; i--)
+            {
+                System.Console.WriteLine(num[i]);
+            }
+         }
             
-            //     int[] num = new int[10];
-            //     int num2;
-            //     int i = 0;
-            //     int n = 0;
-
-            //    for (i = 0; i <= 9; i++)
-            //    {
-            //        System.Console.WriteLine("Informe um número: ");
-            //         var result = int.Parse(Console.ReadLine());
-
-            //         num[i] = result;
-            //    }
-            //    System.Console.WriteLine("Informe o número que deseja procurar no vetor: ");
-            //    num2 = Int32.Parse(Console.ReadLine());
-
-            //         for (i = 0; i <= 9; i++)
-            // 
-                    
-            //             if(num2==num[i])
-            //             {
-            //                 System.Console.WriteLine("O número existe no array! ");
-            //                 n++;
-            //                 break;
-            //             }
-            //         }  
-            //         if(n == 0)
-            //         {
-            //             System.Console.WriteLine("Número inexistente");
-            //         }  
-                        
-            // Leia dois arrays A e B com 15 elementos. Construir um array C, onde cada elemento de C
-            // é a subtração do elemento correspondente de A com B.
-
-            // int[] a = new int[15];
-            // int[] b = new int[15];
-            // int[] c = new int[15];
-            // int i = 0;
-
-            // for (i = 0; i < 15; i++)
-            // {
-            //     System.Console.WriteLine("Informe um número (Array A): ");
-            //     var result = Int32.Parse((Console.ReadLine()));
-
-            //     a[i] = result;
-            // }
-            // for(i = 0; i < 15; i++)
-            // {
-            //     System.Console.WriteLine("Informe um número (Array B)");
-            //     var result2 = Int32.Parse(Console.ReadLine()); 
-
-            //     b[i] = result2;
-            // }
-            // System.Console.WriteLine("O resultado da subtração de A e B é: "); 
-            // for (i = 0; i < 15; i++)
-            // {
-            //     c[i] = a[i] - b[i]; 
-
-            //     System.Console.WriteLine($"{a[i]} - {b[i]} = {c[i]}");
-            // }
-
-
-            //     }
-            //Leia dois arrays A e B com 10 elementos. Em seguida, compare os arrays e verifique se 
-            // os mesmos são iguais ou diferentes.
-
-            // int[] a = new int[10];
-            // int[] b = new int[10];
-            // int n = 0;
-
-            // for (int i = 0; i < 10; i++)
-            // {
-            //     System.Console.WriteLine("Informe um valor para A: ");
-            //     var result = Int32.Parse(Console.ReadLine());
-
-            //     a[i] = result;
-            // }
-            // for (int i = 0; i < 10; i++)
-            // {
-            //     System.Console.WriteLine("Informe um valor para B: ");
-            //     var result2 = Int32.Parse(Console.ReadLine());
-
-            //     b[i] = result2;
-            // }
-            // for (int i = 0; i < 10; i++)
-            // {
-            //     if (a[i] != b[i])
-            //     {
-            //         n++;
-            //     }
-
-            // }
-            //     if(n > 0)
-            //     {
-            //         System.Console.WriteLine("Os arrays são diferentes");
-            //     }
-            //     else
-            //     {
-            //         System.Console.WriteLine("Os arrays são iguais");
-            //     }
-
-            // Terminar exercícios 5 e 6 da lista 2
-            // Leia um array A com 15 elementos, e calcule a média aritmética dos mesmos, em
-            // seguida, diga quantos dos elementos lidos estão abaixo, acima e na média.
-            
-         static void Exercise5()
+         static void Exercise5L2()
          {
             var A = new int[15];
             var a = 0;
@@ -208,12 +87,12 @@ namespace primeira_aula
                 }
         }
         
-        static void Exercise4L1()
+        static void Exercise14L1()
         {
             // Ler três valorese colocálos em ordem.
-            var smaller = Double.MaxValue;
-            var middle = 0.0;
-            var greater = 0.0;
+            var smaller = Double.MinValue;
+            var middle = Double.MinValue;
+            var greater = Double.MinValue;
 
             for (int i = 0; i < 3; i++)
             {
@@ -245,10 +124,38 @@ namespace primeira_aula
             System.Console.WriteLine($"O terceiro número é: {greater}");
         }
             
+        static void Exercise2L3()
+        {
+            // Dado um vetor qualquer com 10 números, faça um programa que informa se há ou não números repetidos nesse vetor.
+
+            var num = new int[10];
+            var s = 0;
+
+            for (int i = 0; i < 10; i++)
+            {
+                System.Console.WriteLine("Informe um número: ");
+                var result = Int32.Parse(Console.ReadLine());
+
+                num[i] = result;
+                if (num[i] == result)
+                {
+                    s++;
+                }
+            }
+            if (s > 0)
+            {
+                System.Console.WriteLine("Há números repetidos no vetor!");
+            }
+            else
+            {
+                System.Console.WriteLine("Não há números repetidos no vetor!");
+            }
+
+        }
 
          static void Main(string[] args)
         {
-            Exercise5();
+            Exercise2L2();
         }
     } 
 }
