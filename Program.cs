@@ -5,7 +5,26 @@ namespace primeira_aula
     class Program
     {
        
+         static void Exercise6L2()
+         {
+            // Leia um array A com 12 elementos. Após sua leitura, colocar os seus elementos em
+            // ordem crescente. Depois ler um array B também com doze elementos, colocar os
+            // elementos de B em ordem decrescente. Construir um array C, onde cada elemento de C é a
+            // soma do elemento correspondente de A com b. Colocar em ordem crescente a matriz
+            // C e apresentar os seus valores.
 
+            var A = new int[12];
+            var B = new int[12];
+            var C = new int[12];
+
+            for (int i = 0; i < 12; i++)
+            {
+                System.Console.WriteLine("Informe um número: ");
+                A[i] = Int32.Parse(Console.ReadLine());
+
+            }
+
+         } 
          static void Exercise2L2()
          {
             var num = new int[10];
@@ -87,6 +106,7 @@ namespace primeira_aula
                 }
         }
         
+
         static void Exercise14L1()
         {
             // Ler três valorese colocálos em ordem.
@@ -128,19 +148,15 @@ namespace primeira_aula
         {
             // Dado um vetor qualquer com 10 números, faça um programa que informa se há ou não números repetidos nesse vetor.
 
-            var num = new int[10];
+            var num = new int[5];
             var s = 0;
 
-            for (int i = 0; i < 10; i++)
+            for (int i = 0; i < 5; i++)
             {
                 System.Console.WriteLine("Informe um número: ");
-                var result = Int32.Parse(Console.ReadLine());
-
-                num[i] = result;
-                if (num[i] == result)
-                {
-                    s++;
-                }
+                num[i] = Int32.Parse(Console.ReadLine());
+              
+            
             }
             if (s > 0)
             {
@@ -155,7 +171,7 @@ namespace primeira_aula
 
          static void Main(string[] args)
         {
-            Exercise2L2();
+            Exercise2L3();
         }
     } 
 }
