@@ -4,7 +4,115 @@ namespace primeira_aula
 {
     class Program
     {
-       
+        static void Exercise4L2()
+        {
+            // Leia dois arrays A e B com 10 elementos. Em seguida, compare os arrays e verifique se
+            // os mesmos são iguais ou diferentes
+
+            const int arraysLenght = 3;
+
+            var a = new double?[arraysLenght];
+            var b = new double?[arraysLenght];
+
+            System.Console.WriteLine($"Informe os {arraysLenght} primeiros valores: ");
+            for (int i = 0; i < arraysLenght; i++)
+            {
+                System.Console.WriteLine("Digite um valor: ");
+                a[i] = double.Parse(Console.ReadLine());
+            }
+
+            System.Console.WriteLine($"Informe os próximos {arraysLenght} valores: ");
+            for (int i = 0; i < arraysLenght; i++)
+            {
+                System.Console.WriteLine("Digite um valor: ");
+                b[i] = double.Parse(Console.ReadLine());
+            }
+
+            var arraysAreEquals = true;
+
+            foreach (var itemB in b)
+            {
+                var hasEquals = false;
+
+                for (int i = 0; i < a.Length; i++)
+                {
+                    if (a[i] == itemB)
+                    {
+                        hasEquals = true;
+                        a[i] = null;
+                        break;
+                    }
+                }
+
+                if (!hasEquals)
+                {
+                    arraysAreEquals = false;
+                    System.Console.WriteLine("Os arrays são diferentes");
+                    break;
+                }
+            }
+
+            if (arraysAreEquals)
+            {
+                System.Console.WriteLine("Os arrays são iguais");
+            }
+
+        }
+         static void Exercise3L3()
+         {
+            // Um certa empresa fez uma pesquisa para saber se as pessoas gostaram ou não de um novo
+            // produto lançado no mercado. Para isso, forneceu-se o sexo do entrevistado e a sua resposta
+            // (sim ou não). Sabendo-se que foram entrevistadas 10 pessoas, fazer um algoritmo que calcule e
+            // escreva:
+            // • O número de pessoas que responderam sim;
+            // • O número de pessoas que responderam não;
+            // • A percentagem de pessoas do sexo feminino que responderam sim;
+            // • A percentagem de pessoas do sexo masculino que responderam não;
+            const int quantidade = 3;
+
+            var S = new string[quantidade];
+            var R = new string[quantidade];
+            (int fem, int mas) respostas = (0,0);
+            (int s, int n) respostas2 = (0,0);
+            
+            for (int i = 0; i < quantidade; i++)
+            {
+                System.Console.WriteLine("Informe o seu sexo (fem / mas)");
+                S[i] = Console.ReadLine();        
+
+                if (S[i] == "fem")
+                {
+                    respostas.fem++;
+                }    
+                else
+                {
+                    respostas.mas++;
+                } 
+            }
+
+            for (int i = 0; i < quantidade; i++)
+            {
+                System.Console.WriteLine("Você gostou do produto? (sim / não)");
+                R[i] = Console.ReadLine();
+
+                if (R[i] == "sim")
+                {
+                    respostas2.s++;
+                }
+                else
+                {
+                    respostas2.n++;
+                }
+            }
+
+            System.Console.WriteLine($"{respostas2.s} pessoas responderam sim ");
+            System.Console.WriteLine($"{respostas2.n} pessoas responderam não ");
+
+
+            System.Console.WriteLine($"A porcentagem de pessoas do sexo feminino que responderam sim foi: %{(respostas.fem * 100)/respostas2.s}");
+            System.Console.WriteLine($"A porcentagem de pessoas do sexo masculino que responderam não foi: %{(respostas.mas * 100)/respostas2.n}");
+            
+         }
          static void Exercise6L2()
          {
             // Leia um array A com 12 elementos. Após sua leitura, colocar os seus elementos em
@@ -171,7 +279,7 @@ namespace primeira_aula
 
          static void Main(string[] args)
         {
-            Exercise2L3();
+            Exercise3L3();
         }
     } 
 }
