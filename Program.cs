@@ -58,59 +58,29 @@ namespace primeira_aula
             }
 
         }
-         static void Exercise3L3()
+         static void Exercise1L3()
          {
-            // Um certa empresa fez uma pesquisa para saber se as pessoas gostaram ou não de um novo
-            // produto lançado no mercado. Para isso, forneceu-se o sexo do entrevistado e a sua resposta
-            // (sim ou não). Sabendo-se que foram entrevistadas 10 pessoas, fazer um algoritmo que calcule e
-            // escreva:
-            // • O número de pessoas que responderam sim;
-            // • O número de pessoas que responderam não;
-            // • A percentagem de pessoas do sexo feminino que responderam sim;
-            // • A percentagem de pessoas do sexo masculino que responderam não;
-            const int quantidade = 3;
+            //Popule dois vetores com 10 valores cada. Após esta operação, troque o conteúdo dos vetores.
+            const int Array = 3;
 
-            var S = new string[quantidade];
-            var R = new string[quantidade];
-            (int fem, int mas) respostas = (0,0);
-            (int s, int n) respostas2 = (0,0);
-            
-            for (int i = 0; i < quantidade; i++)
+            var A = new int[Array];
+            var B = new int[Array];
+            var aux = new int[Array];
+            int i = 0;
+
+            System.Console.WriteLine($"Informe os {Array} primeiros valores ");
+            for (i = 0; i < Array; i++)
             {
-                System.Console.WriteLine("Informe o seu sexo (fem / mas)");
-                S[i] = Console.ReadLine();        
-
-                if (S[i] == "fem")
-                {
-                    respostas.fem++;
-                }    
-                else
-                {
-                    respostas.mas++;
-                } 
+                System.Console.WriteLine("Digite um número: ");
+                A[i] = Int32.Parse(Console.ReadLine());
             }
 
-            for (int i = 0; i < quantidade; i++)
+            System.Console.WriteLine($"Informe os póximos {Array} valores ");
+            for (i = 0; i < Array; i++)
             {
-                System.Console.WriteLine("Você gostou do produto? (sim / não)");
-                R[i] = Console.ReadLine();
-
-                if (R[i] == "sim")
-                {
-                    respostas2.s++;
-                }
-                else
-                {
-                    respostas2.n++;
-                }
+                System.Console.WriteLine("Digite um número: ");
+                B[i] = Int32.Parse(Console.ReadLine());
             }
-
-            System.Console.WriteLine($"{respostas2.s} pessoas responderam sim ");
-            System.Console.WriteLine($"{respostas2.n} pessoas responderam não ");
-
-
-            System.Console.WriteLine($"A porcentagem de pessoas do sexo feminino que responderam sim foi: %{(respostas.fem * 100)/respostas2.s}");
-            System.Console.WriteLine($"A porcentagem de pessoas do sexo masculino que responderam não foi: %{(respostas.mas * 100)/respostas2.n}");
             
          }
          static void Exercise6L2()
@@ -213,7 +183,7 @@ namespace primeira_aula
                     System.Console.WriteLine($"{c} números do Array estão na média de ");
                 }
         }
-        
+
 
         static void Exercise14L1()
         {
@@ -256,21 +226,30 @@ namespace primeira_aula
         {
             // Dado um vetor qualquer com 10 números, faça um programa que informa se há ou não números repetidos nesse vetor.
 
-            var num = new int[5];
-            var s = 0;
+            const int arraysLenght = 5;
+            var num = new int[arraysLenght];
+            var repetidos = false;
 
-            for (int i = 0; i < 5; i++)
+            for (int i = 0; i < arraysLenght; i++)
             {
                 System.Console.WriteLine("Informe um número: ");
                 num[i] = Int32.Parse(Console.ReadLine());
-              
+
+                foreach (var item in num)
+                {
+                    if (num[i] == num[i + 1])
+                {
+                    repetidos = true;
+                }
+                }                
+                
             
             }
-            if (s > 0)
+            if (repetidos)
             {
                 System.Console.WriteLine("Há números repetidos no vetor!");
             }
-            else
+            else if (!repetidos)
             {
                 System.Console.WriteLine("Não há números repetidos no vetor!");
             }
@@ -279,7 +258,7 @@ namespace primeira_aula
 
          static void Main(string[] args)
         {
-            Exercise3L3();
+            Exercise2L3();
         }
     } 
 }
