@@ -4,7 +4,65 @@ namespace primeira_aula
 {
     class Program
     {
-        static void Exercise4L2()
+         static void Exercise9L3()
+         {
+            // Crie um vetor de strings de 10 posições onde cada posição recebe uma letra do alfabeto.
+            // No final, imprima a string resultante da soma das strings que residem em índices pares.
+            
+            const int Array = 5;
+            var letras = new string[Array];
+
+            
+
+         }
+         static void Exercise8L3()
+         {
+            // Crie um vetor de strings de 10 posições onde cada posição recebe uma letra do alfabeto.
+            // No final, imprima quantas destas são vogais.
+
+            const int Array = 10;
+            var alfabeto = new string[Array];  
+            int cont = 0;   
+
+            for (int i = 0; i < Array; i++)
+            {
+                System.Console.WriteLine("Informe uma letra do alfabeto: ");
+                var result = Console.ReadLine();
+
+                alfabeto[i] = result;
+                
+                if (result == "a" || result == "e" || result == "i" || result == "o" || result == "u")
+                {
+                    cont++;  
+                }                
+            }
+            System.Console.WriteLine($"{cont} das letras informadas são vogais!");
+         } 
+         static void Exercise7L3()
+         {
+            // Crie e popule um vetor A e imprima na tela o número de vezes que existe um número
+            // residindo na mesma posição do vetor que seu valor numérico.
+
+            const int Array = 10;
+            var a = new int[Array];
+            int cont = 0;
+
+            for (int i = 0; i < Array; i++)
+            {
+                System.Console.WriteLine("Informe um número: ");
+                var result = Int32.Parse(Console.ReadLine());
+
+                a[i] = result;
+
+                if (i == result)
+                {
+                    cont++;
+                }
+            }
+            System.Console.WriteLine($"O número de vezes que existe um número residindo na mesma posição do vetor que seu valor numérico é: {cont}");
+
+         }
+         static void Exercise4L2()
         {
             // Leia dois arrays A e B com 10 elementos. Em seguida, compare os arrays e verifique se
             // os mesmos são iguais ou diferentes
@@ -258,7 +316,7 @@ namespace primeira_aula
 
          static void Main(string[] args)
         {
-            Exercise2L3();
+            Exercise8L3();
         }
     } 
 }
