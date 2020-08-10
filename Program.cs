@@ -4,18 +4,69 @@ namespace primeira_aula
 {
     class Program
     {
-         static void Exercise9L3()
+        static void Exercise4L3()
+        {
+            // Desenvolver um programa que efetue a leitura de cinco elementos de uma matriz // A do tipo vetor.
+            // No final, apresente o total da soma de todos os elementos // que sejam impares.
+               
+        }
+        static void Exercise5L3()
+        {
+            // Contar quantos valores de um vetor de 10 posições são positivos
+
+            const int Array = 10;
+            var a = new int[Array];
+            int positivos = 0;
+            var result = 0;
+
+            for (int i = 0; i < Array; i++)
+            {
+                System.Console.WriteLine("Informe um número: "); 
+                try
+                {
+                    result = Int32.Parse(Console.ReadLine());
+                }
+                catch (System.Exception)
+                {
+                    System.Console.WriteLine("Informe um valor válido! ");
+                    continue;
+                } 
+
+                a[i] = result;
+                if (result > 0)
+                {
+                    positivos++;
+                }
+            }
+            System.Console.WriteLine($"{positivos} valores do vetor são positivos!");
+
+        }
+        static void Exercise9L3()
          {
             // Crie um vetor de strings de 10 posições onde cada posição recebe uma letra do alfabeto.
             // No final, imprima a string resultante da soma das strings que residem em índices pares.
             
-            const int Array = 5;
+            const int Array = 10;
             var letras = new string[Array];
+            var pares = "";
 
+            for (int i = 0; i < Array; i++)
+            {
+                System.Console.WriteLine("Informe uma letra do alfabeto: ");
+                var result = Console.ReadLine();
+
+                letras[i] = result;
+            }
+            for (int i = 0; i < Array; i+=2)
+            {
+                pares += letras[i];                
+            }
+            System.Console.WriteLine($"Soma das letras: {pares}");
             
 
+
          }
-         static void Exercise8L3()
+        static void Exercise8L3()
          {
             // Crie um vetor de strings de 10 posições onde cada posição recebe uma letra do alfabeto.
             // No final, imprima quantas destas são vogais.
@@ -38,7 +89,7 @@ namespace primeira_aula
             }
             System.Console.WriteLine($"{cont} das letras informadas são vogais!");
          } 
-         static void Exercise7L3()
+        static void Exercise7L3()
          {
             // Crie e popule um vetor A e imprima na tela o número de vezes que existe um número
             // residindo na mesma posição do vetor que seu valor numérico.
@@ -62,7 +113,7 @@ namespace primeira_aula
             System.Console.WriteLine($"O número de vezes que existe um número residindo na mesma posição do vetor que seu valor numérico é: {cont}");
 
          }
-         static void Exercise4L2()
+        static void Exercise4L2()
         {
             // Leia dois arrays A e B com 10 elementos. Em seguida, compare os arrays e verifique se
             // os mesmos são iguais ou diferentes
@@ -116,7 +167,7 @@ namespace primeira_aula
             }
 
         }
-         static void Exercise1L3()
+        static void Exercise1L3()
          {
             //Popule dois vetores com 10 valores cada. Após esta operação, troque o conteúdo dos vetores.
             const int Array = 3;
@@ -141,7 +192,7 @@ namespace primeira_aula
             }
             
          }
-         static void Exercise6L2()
+        static void Exercise6L2()
          {
             // Leia um array A com 12 elementos. Após sua leitura, colocar os seus elementos em
             // ordem crescente. Depois ler um array B também com doze elementos, colocar os
@@ -161,7 +212,7 @@ namespace primeira_aula
             }
 
          } 
-         static void Exercise2L2()
+        static void Exercise2L2()
          {
             var num = new int[10];
 
@@ -184,7 +235,7 @@ namespace primeira_aula
             }
          }
             
-         static void Exercise5L2()
+        static void Exercise5L2()
          {
             var A = new int[15];
             var a = 0;
@@ -314,9 +365,9 @@ namespace primeira_aula
 
         }
 
-         static void Main(string[] args)
+        static void Main(string[] args)
         {
-            Exercise8L3();
+            Exercise5L3();
         }
     } 
 }
