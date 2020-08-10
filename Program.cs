@@ -4,11 +4,59 @@ namespace primeira_aula
 {
     class Program
     {
+        static void Exercise6L3()
+        {
+            // Ler um vetor de 10 posições (aceitar somente números positivos). Escrever a seguir o
+            // valor do maior elemento de Q e a respectiva posição que ele ocupa no vetor.
+
+            const int Array = 10;
+            var a = new int[Array];
+            (int maior, int posicao) cont = (0,0);  
+            
+            for (int i = 0; i < Array; i++)
+            {
+                System.Console.WriteLine($"Informe {Array} números positivos: ");
+                var result = Int32.Parse(Console.ReadLine());
+
+                a[i] = result; 
+
+                if (result < 0)
+                {
+                    System.Console.WriteLine("Apenas números positivos!!");
+                }
+                if (result > cont.maior)
+                {
+                    cont.maior = result;
+                    cont.posicao = i;
+                }
+               
+            }
+            System.Console.WriteLine($"Maior elemento: {cont.maior}\nPosição ocupada no vetor: {cont.posicao}");
+            
+        }
         static void Exercise4L3()
         {
             // Desenvolver um programa que efetue a leitura de cinco elementos de uma matriz // A do tipo vetor.
             // No final, apresente o total da soma de todos os elementos // que sejam impares.
-               
+
+            const int Array = 5;
+            var a = new int[Array];
+            int impares = 0;
+
+            for (int i = 0; i < Array; i++)
+            {
+                System.Console.WriteLine($"Informe {Array} números: ");
+                a[i] = Int32.Parse(Console.ReadLine());
+
+                if(a[i] % 2 > 0)
+                {
+                    impares += a[i];
+                };
+            }
+            System.Console.WriteLine($"A soma dos números impares informados é {impares}");
+
+
+
         }
         static void Exercise5L3()
         {
@@ -170,25 +218,34 @@ namespace primeira_aula
         static void Exercise1L3()
          {
             //Popule dois vetores com 10 valores cada. Após esta operação, troque o conteúdo dos vetores.
-            const int Array = 3;
+            const int Array = 10;
 
             var A = new int[Array];
             var B = new int[Array];
             var aux = new int[Array];
-            int i = 0;
-
+            
             System.Console.WriteLine($"Informe os {Array} primeiros valores ");
-            for (i = 0; i < Array; i++)
+            for (int i = 0; i < Array; i++)
             {
                 System.Console.WriteLine("Digite um número: ");
                 A[i] = Int32.Parse(Console.ReadLine());
             }
 
             System.Console.WriteLine($"Informe os póximos {Array} valores ");
-            for (i = 0; i < Array; i++)
+            for (int i = 0; i < Array; i++)
             {
                 System.Console.WriteLine("Digite um número: ");
                 B[i] = Int32.Parse(Console.ReadLine());
+            }
+            for (int i = 0; i < Array; i++)
+            {
+                aux[i] = A[i];
+                A[i] = B[i];
+                B[i] = aux[i];
+            }
+            for (int i = 0; i < Array; i++)
+            {
+                System.Console.WriteLine($"{A[i]} troca {B[i]}");
             }
             
          }
@@ -233,8 +290,7 @@ namespace primeira_aula
             {
                 System.Console.WriteLine(num[i]);
             }
-         }
-            
+         }      
         static void Exercise5L2()
          {
             var A = new int[15];
@@ -292,8 +348,6 @@ namespace primeira_aula
                     System.Console.WriteLine($"{c} números do Array estão na média de ");
                 }
         }
-
-
         static void Exercise14L1()
         {
             // Ler três valorese colocálos em ordem.
@@ -330,44 +384,25 @@ namespace primeira_aula
             System.Console.WriteLine($"O segundo número é: {middle}");
             System.Console.WriteLine($"O terceiro número é: {greater}");
         }
-            
         static void Exercise2L3()
         {
             // Dado um vetor qualquer com 10 números, faça um programa que informa se há ou não números repetidos nesse vetor.
 
-            const int arraysLenght = 5;
-            var num = new int[arraysLenght];
-            var repetidos = false;
+            const int Array = 5;
+            var num = new int[Array];
 
-            for (int i = 0; i < arraysLenght; i++)
+            for (int i = 0; i < Array; i++)
             {
                 System.Console.WriteLine("Informe um número: ");
                 num[i] = Int32.Parse(Console.ReadLine());
-
-                foreach (var item in num)
-                {
-                    if (num[i] == num[i + 1])
-                {
-                    repetidos = true;
-                }
-                }                
-                
-            
-            }
-            if (repetidos)
-            {
-                System.Console.WriteLine("Há números repetidos no vetor!");
-            }
-            else if (!repetidos)
-            {
-                System.Console.WriteLine("Não há números repetidos no vetor!");
-            }
+            } 
+             
 
         }
 
         static void Main(string[] args)
         {
-            Exercise5L3();
+            Exercise2L3();
         }
     } 
 }
