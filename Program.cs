@@ -4,6 +4,7 @@ namespace primeira_aula
 {
     class Program
     {
+
         static void Exercise6L3()
         {
             // Ler um vetor de 10 posições (aceitar somente números positivos). Escrever a seguir o
@@ -239,14 +240,13 @@ namespace primeira_aula
             }
             for (int i = 0; i < Array; i++)
             {
-                aux[i] = A[i];
+                var temp = A[i];
                 A[i] = B[i];
-                B[i] = aux[i];
-            }
-            for (int i = 0; i < Array; i++)
-            {
+                B[i] = temp;
+
                 System.Console.WriteLine($"{A[i]} troca {B[i]}");
             }
+           
             
          }
         static void Exercise6L2()
@@ -388,21 +388,32 @@ namespace primeira_aula
         {
             // Dado um vetor qualquer com 10 números, faça um programa que informa se há ou não números repetidos nesse vetor.
 
-            const int Array = 5;
-            var num = new int[Array];
+            var num = new double[4];
 
-            for (int i = 0; i < Array; i++)
+            for (int i = 0; i < num.Length; i++)
             {
                 System.Console.WriteLine("Informe um número: ");
-                num[i] = Int32.Parse(Console.ReadLine());
+                num[i] = Double.Parse(Console.ReadLine());
             } 
+            for (int i = 0; i < num.Length; i++)
+            {
+                for (int j = 0; j < num.Length; j++)
+                {
+                    if (i != j && num[i] == num[j])
+                    {
+                        System.Console.WriteLine("Há números repetidos no vetor!");
+                        break;
+                    }
+                }
+            }
+            System.Console.WriteLine("Não há números repetidos!");
              
 
         }
 
         static void Main(string[] args)
         {
-            Exercise2L3();
+            Exercise1L3();
         }
     } 
 }
