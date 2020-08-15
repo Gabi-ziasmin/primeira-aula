@@ -5,6 +5,68 @@ namespace primeira_aula
     class Program
     {
 
+        static void Exercise3L3()
+        {
+            // Um certa empresa fez uma pesquisa para saber se as pessoas gostaram ou não de um novo
+            // produto lançado no mercado. Para isso, forneceu-se o sexo do entrevistado e a sua resposta
+            // (sim ou não). Sabendo-se que foram entrevistadas 10 pessoas, fazer um algoritmo que calcule e
+            // escreva:
+            // • O número de pessoas que responderam sim;
+            // • O número de pessoas que responderam não;
+            // • A percentagem de pessoas do sexo feminino que responderam sim;
+            // • A percentagem de pessoas do sexo masculino que responderam não;
+
+            (int sim, int nao) respostas = (0,0);
+            (int mulheres, int homens) valor = (0,0);
+            var m = 0;
+            var f = 0;
+            var cont = 0;
+
+
+            while (cont < 10)
+            {
+                System.Console.WriteLine("Qual seu sexo? (1 = feminino)(2 = masculino)");
+                var fm = Int32.Parse(Console.ReadLine());
+                System.Console.WriteLine("Você gostou do produto?(1 = SIM)(2 = NÃO)");
+                var sn = Int32.Parse(Console.ReadLine());
+
+                if (sn == 1 && fm == 1)
+                {
+                    respostas.sim++;
+                    valor.mulheres++;   
+                    m++;                 
+                }
+                else if (sn == 2 && fm == 2)
+                {
+                    respostas.nao++;
+                    valor.homens++;
+                    f++;
+                }
+                else if (sn == 1)
+                {
+                    respostas.sim++;
+                }
+                else if (sn == 2)
+                {
+                    respostas.nao++;
+                }
+                else if (fm == 1)
+                {
+                    f++;
+                }
+                else if (fm == 2)
+                {
+                    m++;
+                }
+
+
+                cont++;
+            }
+            System.Console.WriteLine($"O total de pessoas que responderam sim foi: {respostas.sim}");
+            System.Console.WriteLine($"O total de pessoas que responderam não foi: {respostas.nao}");
+            System.Console.WriteLine($"A porcentagem de Mulheres que responderam sim foi: {(valor.mulheres*100)/f}%");
+            System.Console.WriteLine($"A porcentagem de Homens que responderam não foi: {(valor.homens*100)/m}%");                
+        }
         static void Exercise6L3()
         {
             // Ler um vetor de 10 posições (aceitar somente números positivos). Escrever a seguir o
@@ -413,7 +475,7 @@ namespace primeira_aula
 
         static void Main(string[] args)
         {
-            Exercise1L3();
+            Exercise3L3();
         }
     } 
 }
