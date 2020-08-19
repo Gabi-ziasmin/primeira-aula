@@ -4,7 +4,20 @@ namespace primeira_aula
 {
     class Program
     {
+        
+        static void Revisao()
+        {
+        //3 Lista 1
+           var cont = 0;
 
+            while (cont < 200)
+            {
+                System.Console.WriteLine(cont+=1);
+
+                cont++;
+            }
+
+        }
         static void Exercise3L3()
         {
             // Um certa empresa fez uma pesquisa para saber se as pessoas gostaram ou não de um novo
@@ -285,7 +298,7 @@ namespace primeira_aula
 
             var A = new int[Array];
             var B = new int[Array];
-            var aux = new int[Array];
+            var aux = 0;
             
             System.Console.WriteLine($"Informe os {Array} primeiros valores ");
             for (int i = 0; i < Array; i++)
@@ -302,9 +315,9 @@ namespace primeira_aula
             }
             for (int i = 0; i < Array; i++)
             {
-                var temp = A[i];
+                aux = A[i];
                 A[i] = B[i];
-                B[i] = temp;
+                B[i] = aux;
 
                 System.Console.WriteLine($"{A[i]} troca {B[i]}");
             }
@@ -318,18 +331,73 @@ namespace primeira_aula
             // elementos de B em ordem decrescente. Construir um array C, onde cada elemento de C é a
             // soma do elemento correspondente de A com b. Colocar em ordem crescente a matriz
             // C e apresentar os seus valores.
+            const int Array = 12; 
+            var A = new int[Array];
+            var B = new int[Array];
+            var C = new int[Array];
 
-            var A = new int[12];
-            var B = new int[12];
-            var C = new int[12];
-
-            for (int i = 0; i < 12; i++)
+            System.Console.WriteLine($"Informe os primeiros {Array} números");
+            for (int i = 0; i < Array; i++)
             {
                 System.Console.WriteLine("Informe um número: ");
-                A[i] = Int32.Parse(Console.ReadLine());
-
+                A[i] = Int32.Parse(Console.ReadLine());                
             }
-
+            System.Console.WriteLine($"Informe os próximos {Array} números");
+            for (int i = 0; i < Array; i++)
+            {
+                System.Console.WriteLine("Informe um número: ");
+                B[i] = Int32.Parse(Console.ReadLine());
+            }
+            //Ordem crescente Array A
+            for (int i = 0; i < Array; i++)
+            {
+                for (int j = i+1; j < Array; j++)
+                {
+                    if (A[i] > A[j])
+                    {
+                        var aux = A[i];
+                        A[i] = A[j];
+                        A[j] = aux;
+                    }
+                }  
+            }
+            //Ordem decrescente Array B
+            for (int i = 0; i < Array; i++)
+            {
+                for (int j = 0; j < i; j++)
+                {
+                    if (B[i] > B[j])
+                    {
+                        int temp = B[i];
+                        B[i] = B[j];
+                        B[j] = temp;
+                    }
+                }
+            }
+            
+            for (int i = 0; i < Array; i++)
+            {
+                C[i] = A[i] + B[i];
+            }
+            
+            //Ordem crecsente Array C
+            for (int i = 0; i < Array; i++)
+            {
+                for (int j = i+1; j < Array; j++)
+                {
+                    if (C[i] > C[j])
+                    {
+                        var aux = C[i];
+                        C[i] = C[j];
+                        C[j] = aux;
+                    }
+                }  
+            }
+            for (int i = 0; i < Array; i++)
+            {
+                System.Console.WriteLine(C[i]);
+            }
+     
          } 
         static void Exercise2L2()
          {
@@ -355,60 +423,43 @@ namespace primeira_aula
          }      
         static void Exercise5L2()
          {
-            var A = new int[15];
-            var a = 0;
-            var b = 0;
-            var c = 0;
-            var media = 0;
-            var soma = 0;
+            // Leia um array A com 15 elementos, e calcule a média aritmética dos mesmos, em
+            // seguida, diga quantos dos elementos lidos estão abaixo, acima e na média
+            var numbers = new double[15];
+            var sum = 0.0;
 
-            for (int i = 0; i < 15; i++)
+            for (int i = 0; i < numbers.Length; i++)
             {
                 System.Console.WriteLine("Informe um número: ");
-                var result = Int32.Parse(Console.ReadLine());
+                var result = Int32.Parse(Console.ReadLine());                
 
-                soma = result + soma;                
-
-                A[i] = result;
-              
-                if(i == 14)
-                {
-                    media = soma / 15;
-                }
-                
-
+                numbers[i] = result;
+                sum += result;
             }
-            
-            for (int i = 0; i < 15; i++)
+
+            var media = sum / numbers.Length;
+            var acima = 0;
+            var igual = 0;
+            var abaixo = 0;
+
+            foreach (var item in numbers)
             {
-                
-                if(A[i] < media)
+                if (item > media)
                 {
-                    a++;
+                    acima++;
                 }
-                else if(A[i] > media)
+                else if (item == media)
                 {
-                    b++;
+                    igual++;
                 }
-                else if(A[i] == media)
+                else
                 {
-                    c++;
+                    abaixo++;
                 }
-
             }
-                System.Console.WriteLine(media);
-                 if(a > 0)
-                {
-                    System.Console.WriteLine($"{a} números do Array estão abaixo da média ");
-                }
-                 if(b > 0)
-                {
-                    System.Console.WriteLine($"{b} números do Array estão acima da média ");
-                }
-                if(c > 0)
-                {
-                    System.Console.WriteLine($"{c} números do Array estão na média de ");
-                }
+            System.Console.WriteLine($"{acima} elementos estão acima da média");
+            System.Console.WriteLine($"{igual} elementos estão na média");
+            System.Console.WriteLine($"{abaixo} elementos estão abaixo da média");    
         }
         static void Exercise14L1()
         {
@@ -475,7 +526,7 @@ namespace primeira_aula
 
         static void Main(string[] args)
         {
-            Exercise3L3();
+            Revisao();
         }
     } 
 }
