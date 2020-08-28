@@ -5,19 +5,12 @@ namespace primeira_aula
     class Program
     {
         
-        static void Revisao()
+        static void Prova2()
         {
-        //3 Lista 1
-           var cont = 0;
-
-            while (cont < 200)
-            {
-                System.Console.WriteLine(cont+=1);
-
-                cont++;
-            }
-
+            
         }
+    
+    
         static void Exercise3L3()
         {
             // Um certa empresa fez uma pesquisa para saber se as pessoas gostaram ou não de um novo
@@ -526,7 +519,7 @@ namespace primeira_aula
 
         static void Main(string[] args)
         {
-            Revisao();
+            Prova2();
         }
     } 
 }
